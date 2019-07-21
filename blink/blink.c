@@ -3,16 +3,20 @@
 #include <time.h>
 
 
-int main()
+void main()
 {
+    int PIN = 0;
+
     wiringPiSetup();
-    pinMode(17, OUTPUT);  
+    pinMode(PIN, OUTPUT);
     printf("\nC: Time to blink\n");
     printf("\nPress <ctrl><c> to quit...\n");
     while(1) {
-        digitalWrite(17, 1);
+        printf("On...\n");
+        digitalWrite(PIN, 1);
         delay(1000);
-        digitalWrite(17, 0);
+        printf("   Off\n");
+        digitalWrite(PIN, 0);
         delay(500);
     }
 }
